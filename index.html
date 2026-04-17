@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento Clínica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Tela 1 -->
+    <div class="tela ativa" id="tela1">
+      <h1>Clínica Vida+</h1>
+      <p>Agendamento de Consultas</p>
+      <button onclick="proximaTela(2)">Agendar Consulta</button>
+    </div>
+
+    <!-- Tela 2 -->
+    <div class="tela" id="tela2">
+      <h2>Escolha a especialidade</h2>
+
+      <button onclick="selecionar('Nutrição')">Nutrição</button>
+      <button onclick="selecionar('Fisioterapia')">Fisioterapia</button>
+      <button onclick="selecionar('Terapeuta Ocupacional')">Terapeuta Ocupacional</button>
+      <button onclick="selecionar('Fonoaudiologia')">Fonoaudiologia</button>
+      <button onclick="selecionar('Neurologia')">Neurologia</button>
+
+      <button class="proximo" onclick="proximaTela(3)">Próximo</button>
+    </div>
+
+    <!-- Tela 3 -->
+    <div class="tela" id="tela3">
+      <h2>Escolha a data</h2>
+
+      <input type="date" id="data">
+
+      <button class="proximo" onclick="proximaTela(4)">Continuar</button>
+    </div>
+
+    <!-- Tela 4 -->
+    <div class="tela" id="tela4">
+      <h2>Escolha o horário</h2>
+
+      <button onclick="selecionarHora('08:00')">08:00</button>
+      <button onclick="selecionarHora('10:00')">10:00</button>
+      <button onclick="selecionarHora('14:00')">14:00</button>
+      <button onclick="selecionarHora('16:00')">16:00</button>
+
+      <button class="proximo" onclick="proximaTela(5)">Confirmar</button>
+    </div>
+
+    <!-- Tela 5 -->
+    <div class="tela" id="tela5">
+      <h2>Confirmação</h2>
+      <p id="resumo"></p>
+
+      <button onclick="finalizar()">Confirmar Agendamento</button>
+      <button onclick="proximaTela(1)">Voltar ao início</button>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
